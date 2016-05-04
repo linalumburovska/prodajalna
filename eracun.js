@@ -214,7 +214,7 @@ streznik.post('/prijava', function(zahteva, odgovor) {
     } catch (err) {
       napaka2 = true;
     }
-  
+    
     odgovor.end();
   });
 })
