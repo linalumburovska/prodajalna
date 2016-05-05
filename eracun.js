@@ -48,10 +48,10 @@ function davcnaStopnja(izvajalec, zanr) {
 
 // Prikaz seznama pesmi na strani
 streznik.get('/', function(zahteva, odgovor) {
-  if(!zahteva.session.najavenaStranka) {
+  if(zahteva.session.najavenaStranka==null) {
     odgovor.redirect('/prijava');
   }
-  else {
+  //else {
   pb.all("SELECT Track.TrackId AS id, Track.Name AS pesem, \
           Artist.Name AS izvajalec, Track.UnitPrice * " +
           razmerje_usd_eur + " AS cena, \
@@ -73,7 +73,7 @@ streznik.get('/', function(zahteva, odgovor) {
         odgovor.render('seznam', {seznamPesmi: vrstice});
         }
     })
-  }
+  //}
 })
 
 // Dodajanje oz. brisanje pesmi iz košarice
