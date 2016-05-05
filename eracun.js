@@ -239,17 +239,15 @@ streznik.post('/stranka', function(zahteva, odgovor) {
   var form = new formidable.IncomingForm();
   
   form.parse(zahteva, function (napaka1, polja, datoteke) {
-    if(!zahteva.session.najavenaStranka){
-      zahteva.session.najavenaStranka=polja.seznamStrank;
-    }
+    zahteva.session.najavenaStranka=polja.seznamStrank;
     odgovor.redirect('/');
   });
 })
 
 // Odjava stranke
 streznik.post('/odjava', function(zahteva, odgovor) {
-  zahteva.odgovor.najavenaStranka=null;
-    odgovor.redirect('/prijava'); 
+      odgovor.redirect('/prijava');
+      zahteva.odgovor.najavenaStranka=null;
 })
 
 
