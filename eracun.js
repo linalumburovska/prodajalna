@@ -26,7 +26,7 @@ streznik.use(
   })
 );
 
-var najavenaStranka=null;
+//var najavenaStranka=null;
 var razmerje_usd_eur = 0.877039116;
 
 function davcnaStopnja(izvajalec, zanr) {
